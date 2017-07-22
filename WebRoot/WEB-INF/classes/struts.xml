@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+<constant name="struts.custom.i18n.resources" value="messageResources"></constant>
+
+ <package name="com.actions" extends="struts-default">
+ 	<action name="loginUser" class="Loginaction">
+ 			<result name="success">/main.jsp</result>
+ 			<result name="brand" type="redirect">brand!toMain.action</result>
+ 			<result name="error">/error.jsp</result>
+ 			<result name="login">/login.jsp</result>
+ 	</action>
+ 	
+ 	<action name="brand" class="BrandAction">
+ 	        <result name="main">/mainBrand.jsp</result>
+ 			<result name="brandListTypeOne">/BrandList.jsp</result>
+ 			<result name="brandListTypeTwo">/BrandList.jsp</result>
+ 			<result name="brandDetail">/brandDetail.jsp</result>
+ 			<result name="brand">/mainBrand.jsp</result>
+ 			<result name="searchBrandListByWd">/searchBrand.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 	</action>
+ 	
+ 	<action name="User" class="Useraction">
+ 			<result name="user">/main.jsp</result>
+ 			<result name="update">/user/edit.jsp</result>
+ 			<result name="addStudent">/user/add.jsp</result>
+ 			<result name="manageStudent">/user/manageStudent.jsp</result>
+ 	</action>
+ 	
+ 	<action name="imageText" class="ImageTextAction">
+ 	       <result name="imageMoveToText">/imageText/imageMoveToText.jsp</result>
+ 	</action>
+ 	
+ 	<action name="gaud" class="PoiAction">
+ 	       <result name="gaudFindMap">/gaud/find.jsp</result>
+ 	       <result name="gaudFindMapData">/gaud/findData.jsp</result>
+ 	       <result name="autoFindData">/gaud/autoCatchData.jsp</result>
+ 	       <result name="gaudFindMapDataByCityAndKey">/gaud/findDataByCityAndKey.jsp</result>
+ 	       <result name="fileConvert">/gaud/gaudFile.jsp</result>
+ 	       <result name="mapRule">/gaud/maprule.jsp</result>
+ 	       <result name="ruleList">/gaud/ruleList.jsp</result>
+ 	       <result name="toTaskList">/gaud/taskList.jsp</result>
+ 	</action>
+ 	
+ </package>
+ 
+ <package name="ajax" extends="json-default">
+      <action name="poiAjax" class="PoiAction">  
+            <result name="startTaskResult" type="json"></result>   
+            <result name="testAjax" type="json"></result>
+        </action>  
+ </package>
+ 
+</struts> 					

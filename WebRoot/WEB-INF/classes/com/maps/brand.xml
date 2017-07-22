@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+    
+    <sqlMap namespace="brand">
+    
+    <typeAlias alias="BrandStat" type="com.entity.BrandStat" />
+    <typeAlias alias="Brand" type="com.entity.Brand" />
+    <typeAlias alias="BrandDetail" type="com.entity.BrandDetail" />
+	<typeAlias alias="BrandShop" type="com.entity.BrandShop" />
+	<typeAlias alias="BrandAgent" type="com.entity.BrandAgent" />
+	<typeAlias alias="BrandContact" type="com.entity.BrandContact" />
+	
+	<cacheModel id="query_brand_cache" readOnly="false" serialize="true" type="LRU">    
+      <flushInterval hours="24" />    
+     <flushOnExecute statement="deleteBrand"  /> 
+     <flushOnExecute statement="updateBrand"  />  
+      <property value="600" name="size" />     
+    </cacheModel>
+
+	<select id="getBrandStatList"  resultClass="java.util.HashMap">
+		<![CDATA[ 
+    select t1.oneid,t1.twoid,t1.onename,t1.towname,num brandNum
+   from
+   (
+      select r.name onename,s.name towname,
+      r.id oneid,s.id twoid 
+      from cg_shop_type s ,cg_shop_type_relation r
+      where 
+      (
+         locate(concat(',',s.id,','),r.child_ids) > 0
+		   or 
+		   locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		   or
+		   locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+      )
+      and s.mark = 1 and r.mark = 1
+      order by r.name
+   ) t1
+   left join 
+  (
+   select t.type,count(*) as num from cg_brand_type t where t.mark =1 group by t.type
+  ) s1 on  s1.type= t1.twoid
+  order by t1.oneid,t1.twoid
+    ]]>
+	</select>
+	
+	<select id="queryBrandListByTypeOne" parameterClass="java.util.HashMap" resultClass="Brand" cacheModel="query_brand_cache">
+	<![CDATA[
+	select t1.oneid as typeLevelOneId,t1.twoid as typeLevelTwoId,
+	t1.onename as typeLevelOneName,t1.towname as typeLevelTwoName,
+    b.name,b.id,b.eng_name,b.pinyin ,b.logo
+    from cg_brand_type  t,
+         cg_brand b,
+        (
+          select r.name onename,s.name towname,r.id oneid,s.id twoid 
+          from cg_shop_type s ,cg_shop_type_relation r
+          where 
+          (
+              locate(concat(',',s.id,','),r.child_ids) > 0
+		      or 
+		      locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		      or
+		      locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+          )
+          and s.mark = 1 and r.mark = 1
+          and r.id = #brandTypeLevelOneId#
+          order by r.name
+   ) t1
+  
+  where b.id = t.brand_id
+  and t.type =t1.twoid
+  and t.mark = 1 and b.mark = 1
+  order by t1.oneid,t1.twoid
+  limit #startIndex#,#pageCount# 
+  ]]>
+	</select>
+	
+	<select id="queryCountBrandListByTypeOne" parameterClass="java.util.HashMap" resultClass="java.lang.Integer">
+	<![CDATA[
+	select count(*)
+    from cg_brand_type  t,
+         cg_brand b,
+        (
+          select r.name onename,s.name towname,r.id oneid,s.id twoid 
+          from cg_shop_type s ,cg_shop_type_relation r
+          where 
+          (
+              locate(concat(',',s.id,','),r.child_ids) > 0
+		      or 
+		      locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		      or
+		      locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+          )
+          and s.mark = 1 and r.mark = 1
+          and r.id = #brandTypeLevelOneId#
+          order by r.name
+   ) t1
+  
+  where b.id = t.brand_id
+  and t.type =t1.twoid
+  and t.mark = 1 and b.mark = 1
+  ]]>
+	</select>
+	
+	<select id="queryBrandListByTypeTwo" parameterClass="java.util.HashMap" resultClass="Brand" cacheModel="query_brand_cache">
+	<![CDATA[
+	select t1.oneid as typeLevelOneId,t1.twoid as typeLevelTwoId,
+	t1.onename as typeLevelOneName,t1.towname as typeLevelTwoName,
+    b.name,b.id,b.eng_name,b.pinyin ,b.logo
+    from cg_brand_type  t,
+         cg_brand b,
+        (
+          select r.name onename,s.name towname,r.id oneid,s.id twoid 
+          from cg_shop_type s ,cg_shop_type_relation r
+          where 
+          (
+              locate(concat(',',s.id,','),r.child_ids) > 0
+		      or 
+		      locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		      or
+		      locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+          )
+          and s.mark = 1 and r.mark = 1
+          and s.id = #brandTypeLevelTwoId#
+          order by r.name
+   ) t1
+  
+  where b.id = t.brand_id
+  and t.type =t1.twoid
+  and t.mark = 1 and b.mark = 1
+  order by t1.oneid,t1.twoid
+  limit #startIndex#,#pageCount# 
+  ]]>
+	</select>
+	
+	<select id="queryCountBrandListByTypeTwo" parameterClass="java.util.HashMap" resultClass="java.lang.Integer">
+	<![CDATA[
+	select count(*)
+    from cg_brand_type  t,
+         cg_brand b,
+        (
+          select r.name onename,s.name towname,r.id oneid,s.id twoid 
+          from cg_shop_type s ,cg_shop_type_relation r
+          where 
+          (
+              locate(concat(',',s.id,','),r.child_ids) > 0
+		      or 
+		      locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		      or
+		      locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+          )
+          and s.mark = 1 and r.mark = 1
+          and s.id = #brandTypeLevelTwoId#
+          order by r.name
+   ) t1
+  
+  where b.id = t.brand_id
+  and t.type =t1.twoid
+  and t.mark = 1 and b.mark = 1 
+  ]]>
+	</select>
+	
+	<select id="queryTwoTypeListByTypeOne" parameterClass="java.lang.String" resultClass="Brand">
+	<![CDATA[
+	     select r.name as typeLevelOneName , s.name as typeLevelTwoName,
+	     r.id as typeLevelOneId , s.id as typeLevelTwoId 
+          from cg_shop_type s ,cg_shop_type_relation r
+          where 
+          (
+              locate(concat(',',s.id,','),r.child_ids) > 0
+		      or 
+		      locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+		      or
+		      locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+          )
+          and s.mark = 1 and r.mark = 1
+          and r.id = #brandTypeLevelOneId#
+          order by r.name
+  ]]>
+	</select>
+	
+	<select id="queryBrandBaseInfo" parameterClass="java.lang.String" resultClass="Brand" >
+	<![CDATA[
+		select b.name,b.id,b.eng_name,b.pinyin,b.logo,b.progress 
+	    from cg_brand b
+	    where b.mark = 1 and b.id = #brandId#
+	    ]]>
+	</select>
+	
+	<select id="queryBrandTypeInfoList" parameterClass="java.lang.String" resultClass="Brand" >
+	<![CDATA[
+		select t1.oneid typeLevelOneId ,t1.twoid typeLevelTwoId,
+		t1.onename typeLevelOneName,t1.towname typeLevelTwoName,
+		b.name,b.id
+	  from cg_brand_type  t,
+	  cg_brand b,
+	  (
+	      select r.name onename,s.name towname,r.id oneid,s.id twoid from cg_shop_type s ,cg_shop_type_relation r
+	      where 
+	      (
+	         locate(concat(',',s.id,','),r.child_ids) > 0
+			   or 
+			   locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+			   or
+			   locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+	      )
+	      and s.mark = 1 and r.mark = 1
+	      order by r.name
+	   ) t1
+	  
+	  where b.id = t.brand_id
+	  and t.type =t1.twoid
+	  and t.mark = 1 and b.mark = 1 and b.id = #brandId#
+	    ]]>
+	</select>
+	
+	<select id="queryBrandDetail" parameterClass="java.lang.String" resultClass="BrandDetail" >
+	<![CDATA[
+	 select * from cg_brand_detail d where d.brand_id = #brandId# 
+	  ]]>
+	</select>
+	
+	<select id="queryRelationBrandList" parameterClass="java.lang.String" resultClass="Brand" >
+	<![CDATA[
+	  select b.name,b.logo,b.eng_name,b.logo from cg_brand b,cg_brand_relation r
+   where  r.master_id = #brandId#
+   and r.slave_id = b.id
+   and b.mark = 1 
+   and r.mark = 1
+	  ]]>
+	</select>
+	
+	<select id="queryBrandShopList" parameterClass="java.lang.String" resultClass="BrandShop" >
+	<![CDATA[
+	  select shop.* 
+	  from cg_brand_shop shop ,cg_brand b 
+	   where shop.mark = 1 and b.mark = 1
+	   and shop.brand_id = b.id 
+	   and b.id = #brandId#
+	   limit 1,5
+	  ]]>
+	</select>
+	
+	<select id="queryBrandAgent" parameterClass="java.lang.String" resultClass="BrandAgent" >
+	<![CDATA[
+	   select distinct ag.*,b.id as brandId,b.name as brandName 
+	   from cg_brand_agent ag,cg_brand b ,cg_brand_agent_brand b1
+	  where b1.agent_id = ag.id and b1.brand_id = b.id
+	  and ag.mark = 1 and b.mark = 1 and b1.mark = 1
+	  and b1.pid = 0
+	  and b.id =  #brandId# 
+	  ]]>
+	</select>
+	
+	
+	<select id="querySubBrandList" parameterClass="java.lang.String" resultClass="Brand" >
+	<![CDATA[
+	   select distinct b.* from 
+	  cg_brand_agent_brand ag1,
+	  cg_brand b,
+	  ( 
+	  select ag.id as agentId 
+	  from cg_brand_agent ag,cg_brand b ,cg_brand_agent_brand b1
+	  where b1.agent_id = ag.id and b1.brand_id = b.id
+	  and ag.mark = 1 and b.mark = 1 and b1.mark = 1
+	  and b.id = #brandId# and ag.mark = 1 and b.mark = 1 and b1.mark = 1
+	  ) agList
+	  where ag1.agent_id = agList.agentId
+	  and b.id = ag1.brand_id
+	  and b.mark = 1 
+	  and ag1.mark = 1
+	  and ag1.pid = 0
+	  and b.id != #brandId#
+	  ]]>
+	</select>
+	
+	<select id="queryBrandContactList" parameterClass="java.lang.String" resultClass="BrandContact" >
+	<![CDATA[
+	  select * from cg_brand_contact co where co.brand_id = #brandId# and co.mark = 1
+	  ]]>
+	</select>
+	
+	<delete id="deleteBrand" parameterClass="java.lang.Integer">
+	   DELETE FROM cg_brand
+	   WHERE  id = #brandId#
+	</delete>
+	
+	<update id="updateBrand" parameterClass="Brand">
+	   update cg_brand
+	   set   name = #name#
+	   WHERE  id = #id#
+	</update >
+	
+	<select id="queryBrandByWd" parameterClass="java.util.HashMap" resultClass="Brand" >
+	<![CDATA[
+	  select * from cg_brand 
+	  where 
+	  ( 
+		  name like  concat('%', #word#, '%')
+		  or eng_name like concat('%', #word#, '%')
+		  or other_name like concat('%', #word#, '%')
+	  )
+	  and mark = 1
+	  limit #startIndex#,#pageCount# 
+	  ]]>
+	</select>
+	
+	<select id="queryCountBrandByWd" parameterClass="java.lang.String" resultClass="java.lang.Integer" >
+	<![CDATA[
+	  select count(*) from cg_brand 
+	  where 
+	  ( 
+		  name like  concat('%', #word#, '%')
+		  or eng_name like concat('%', #word#, '%')
+		  or other_name like concat('%', #word#, '%')
+	  )
+	  and mark = 1
+	  ]]>
+	</select>
+	
+    </sqlMap>

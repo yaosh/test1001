@@ -1,0 +1,17 @@
+#Mon Mar 13 02:31:49 GMT 2017
+eclipse.preferences.version=1
+encoding//WebRoot/footer.jsp=UTF-8
+encoding//WebRoot/gaud/autoCatchData.jsp=UTF-8
+encoding//WebRoot/gaud/cityResource.jsp=UTF-8
+encoding//WebRoot/gaud/find.jsp=UTF-8
+encoding//WebRoot/gaud/findData.jsp=UTF-8
+encoding//WebRoot/gaud/findDataByCityAndKey.jsp=UTF-8
+encoding//WebRoot/gaud/map.jsp=UTF-8
+encoding//WebRoot/gaud/maprule.jsp=UTF-8
+encoding//WebRoot/gaud/ruleList.jsp=UTF-8
+encoding//WebRoot/header.jsp=UTF-8
+encoding//WebRoot/human.sql=UTF-8
+encoding//WebRoot/main.jsp=UTF-8
+encoding//src/com/tools/gaudConvert/BrandHash.java=UTF-8
+encoding//src/messageResources_zh_CN.properties=UTF-8
+encoding/<project>=UTF-8

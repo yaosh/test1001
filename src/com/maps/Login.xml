@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="login">
+
+	<typeAlias alias="Login" type="com.entity.Login" />
+	
+
+	<select id="getlogin" parameterClass="Login"
+		resultClass="java.lang.Integer">
+		<![CDATA[ 
+    select 
+     count(*) as num 
+    from login
+  where username = #username# and password=#password# 
+    ]]>
+	</select>
+	
+</sqlMap>
+

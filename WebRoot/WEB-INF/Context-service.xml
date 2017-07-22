@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<bean id="LoginService" class="com.service.Loginservice.LoginserviceImp">
+<property name="login" ref="LoginImp"></property>
+</bean>  
+
+<bean id="Humanservice" class="com.service.Humanservice.HumanserviceImp">
+<property name="human" ref="HumanImp"></property>
+</bean>  
+  
+<bean id="GaudService" class="com.tools.GaudService">
+</bean>  
+
+<bean id="PoiService" class="com.service.poiservice.PoiServiceImp">
+<property name="poiDao" ref="PoiDaoImp"></property>
+</bean> 
+
+<bean id="BrandService" class="com.service.brandservice.BrandService">
+<property name="branddao" ref="BrandDaoImpl"></property>
+</bean> 
+
+</beans>

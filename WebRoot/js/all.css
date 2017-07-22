@@ -1,0 +1,346 @@
+
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; 
+    font: 20px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, 'Hiragino Sans GB', 'Microsoft YaHei', "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei",  sans-serif;
+    -webkit-font-smoothing:antialiased; 
+    /*-webkit-font-smoothing:antialiased;*/
+}
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{
+	list-style-type: none;
+}
+
+.tl-c{
+	text-align: center;
+}
+.tl-l{
+	text-align: left;
+}
+img{
+	width: 100%;
+}
+
+
+
+/*section1*/
+/*topbanner*/
+.topBanner{
+	position: relative;
+	text-align: center;
+
+	background: url('img/bg_x.png') repeat 0 0;
+}
+
+.logo img{
+	position: absolute;
+	left: 0;
+	top: -2px;
+	width: 20%;
+
+}
+
+.sliders .slider-imgs{
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+.sliders span{
+	position: absolute;
+	bottom: 10px;
+	right: 4px;
+	color: #c51d13;
+	font-size: 20px;
+
+}
+.sliders img{
+
+	border: solid 5px #ffa800;
+}
+.sliders .img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.sliders .note{
+	padding: 10px 3%;	
+	color: #fff;
+
+}
+
+
+/*section2*/
+
+.section2{
+	padding: 36px 3%;
+	background: url('img/bg_help.png') repeat;
+}
+
+.section2 .note{
+	margin-bottom: 20px;
+	font-size: 22px;	
+	color: #e12b20;
+	text-align: center;
+}
+
+.bangc-bd{
+	padding: 20px 10px;
+	background: rgba(255,168,0,0.5);
+
+	
+}
+
+.bangc-bd .info, .qq-f, .qq-f li{
+	display: inline-block;
+	
+} 
+
+.bangc-bd .info{
+	width: 22%;
+	padding-bottom: 8px;
+
+}
+.bangc-bd .info .p{
+	color: #de2419;
+}
+
+
+.bangc-bd img.img-login{
+	width: 22%;
+	margin-right: 6%;
+}
+
+.qq-f{
+	width: 65%;
+
+
+}
+.qq-f li{
+	width: 24%;
+	margin-left: 7%;
+}
+.qq-f-short{
+	width: 54%;
+}
+.qq-f-short li{
+	width: 23%;
+}
+
+.qq-f img{
+	width: 100%;
+}
+.bangc-bd .avatar{
+	width: 16%;
+}
+
+
+
+
+.section2 .btns{
+	margin-top: 17px;
+}
+.section2 .btns a{
+	display: inline-block;
+	width: 39%;
+	margin: 0 4%;
+}
+
+.section2 .img-login{
+	display: inline-block;
+	width: 22%;
+}
+.img-login li{
+	width: 13%;
+}
+
+/*section3*/
+.section3{
+	padding: 28px 0 32px;
+	background: #fee6c2 url('img/bg_help_bd.png') repeat-x 0 100%;
+}
+
+.section3 .title{
+	vertical-align: middle;
+}
+.section3 .title span{
+	display: inline-block;
+}
+.section3 .title img{
+	display: block;	
+}
+.section3 .title .span1{
+	width: 39%;
+	margin-right: 6%;
+}
+.section3 .title .span2{
+	width: 41%;
+}
+.section3 .account{
+	width: 75%;
+	margin: 0 auto;
+}
+
+
+/*section4*/
+.section4{	
+	padding-bottom: 20px;
+	color: #fff;
+	background: #70b349 url('img/bg_attach.png') no-repeat 92% 100%;
+}
+
+.section4 .img1{
+	width: 52%;
+	padding-top: 32px;
+}
+.section4 .img2{
+	display: block;
+	width: 79%;
+	margin: 0 auto;
+	padding-bottom: 15px;
+}
+.section4 .bags{
+	position: relative;
+	width: 480px;
+	height: 480px;
+	margin: 60px auto 75px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.bags-ul li{
+	position: absolute;
+	width: 27%;
+	height: 27%;
+	border-radius: 50%;
+	border: 5px solid #fcc471;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #aaa;
+}
+.bags-ul img{
+	width: 100%;
+	position: absolute;
+	left: -3px;
+	top: 4px;
+}
+
+.section4 .item1{
+	left: -3%;
+	top: 12.5%;
+}
+.section4 .item2{
+	left: 36%;
+	top: -8.3%;
+}
+.section4 .item3{
+	left: 79.8%;
+	top: 13.7%;
+}
+.section4 .item4{
+	left: 79.8%;
+	top: 52.5%;
+}
+.section4 .item5{
+	left: 36%;
+	bottom: -8.3%; 
+}
+.section4 .item6{
+	left: -3%;
+	top: 52.5%; 
+}
+.section4 .tip{
+	width: 46.7%;
+	display: block;
+	margin: 0 auto;
+	padding-top: 27%;
+	
+}
+.section4 .activity-note{
+	margin: 0 30px;
+}
+.section4 .activity-note .title img{
+	width: auto;
+}
+.section4 .activity-note li{
+	margin: 0 30px;
+}
+.section4 .note li{
+	list-style-image: url('img/disc.png');
+}
+@media (max-width: 240px) {
+	body{
+		font-size: 11px;
+	}
+	.section2 .note{
+		font-size: 12px;
+	}
+
+	.section4 .bags{
+		width: 180px;
+		height: 180px;
+		
+	}
+	.bags-ul li{
+		border-width: 1px;
+	}
+	.bags-ul img{
+		top: 1px;
+		left: 0;
+	}
+
+}
+@media (min-width: 241px) and (max-width: 479px) {
+	body{
+
+		font-size: 14px;
+	}
+	.section2 .note{
+		font-size: 16px;
+	}
+	.section4 .bags{
+		width: 240px;
+		height: 240px;
+		
+	}
+	.bags-ul li{
+		border-width: 2px;
+	}
+	.bags-ul img{
+		top: 4px;
+		left: 0;
+	}
+	.bangc-bd .info{
+		font-size: 12px;
+	}
+
+}
+@media (min-width: 480px) and (max-width: 639px) {
+	body{
+		font-size: 14px;
+	}
+	.section2 .note{
+		font-size: 16px;
+	}
+	.section4 .bags{
+		width: 360px;
+		height: 360px;
+		border-radius: 360px;
+	}
+	.bags-ul li{
+		border-width: 2px;
+	}
+}
+	
+
+@media (min-width: 640px) and (max-width: 800px) {
+	.section2 img, .section3 img, .section4 img{		
+		margin: 0 auto;
+	}
+	
+}

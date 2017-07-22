@@ -1,0 +1,77 @@
+.document{
+		font-size:14px;
+	}
+	.document img{
+		height:20px;
+		vertical-align:top;
+	}
+	.document a.title{
+		display:inline-block;
+		width:300px;
+		height:20px;
+		overflow:hidden;
+	}
+	.document a.delete-doc-btn{
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		line-height: 16px;
+		background: #e4e4e4;
+		text-align: center;
+		vertical-align: top;
+	}
+	#doc-list{
+		margin-top:5px;
+	}
+	
+	.required{
+		color:red;
+		display:inline:block;
+		padding-left:10px;
+	}
+
+#showImg{
+border: 1px #e4e4e4 solid; padding: 55px;display:none;
+}
+
+textarea{
+resize:none;
+}
+.brand-floor,.brand-type,.brand-member,.brand-pos a{
+display:inline-block;
+}
+.brand-floor a.floor-delete-btn,.brand-type a.type-delete-btn,.brand-member a.member-delete-btn{
+position:absolute;
+z-index:999;
+top:0px;
+right:-20px;
+background-color:#e4e4e4;
+padding-left:6px;
+padding-right:6px;
+line-height:18px;
+color:gray;
+display:none;
+}
+.brand-pos a.pos-delete-btn{
+position:absolute;
+z-index:999;
+top:0px;
+right:-10px;
+background-color:#e4e4e4;
+padding-left:6px;
+padding-right:6px;
+line-height:18px;
+color:gray;
+display:none;
+}
+.brand-floor,.brand-type,.brand-member{
+display:inline-block;
+position:relative;
+}
+
+.brand-pos{
+display:inline-block;
+position:relative;
+}
+
+.editable {background: url(/res/admin/images/editable.gif) no-repeat right 2px; padding-right: 14px;}

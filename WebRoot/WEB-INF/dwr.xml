@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+    
+<dwr>
+  <allow>  
+    <create creator="new" javascript="GAUD" scope="application">  
+      <param name="class" value="com.tools.GaudService"/>  
+      <include method="saveGuadData" />
+    </create>
+    
+    <create creator="new" javascript="GAUDOPT" scope="application">  
+      <param name="class" value="com.tools.GaudServiceOpt"/>  
+      <include method="saveGuadData" />
+    </create>
+    
+    <create javascript="GAUDRULE" creator="spring">
+            <param name="beanName" value="PoiService"></param>
+    </create>
+        
+    <convert converter="bean" match="com.entity.GaudShopType" />
+    <convert converter="bean" match="com.entity.ChenggeShopType" />
+    
+  </allow>  
+</dwr>

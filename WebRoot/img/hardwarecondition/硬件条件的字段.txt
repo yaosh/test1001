@@ -1,0 +1,9 @@
+$detail_info['area'];
+$detail_info['total_power'];
+$detail_info['power'];
+$detail_info['duration'];
+$detail_info['decoration'];
+$detail_info['design'];
+
+"area", "power", "duration", "ads", "height", "distance", "loads",
+				"gas", "pipe", "smoke", "oil", "escalators", "decoration", "design",

@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+*{margin:0;padding:0;font-family:Arial,Hei,"Microsoft Yahei";font-size:14px;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+/* clear */
+.clearfix:after{clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}
+.clearfix{*zoom:1;clear:left;}
+.checkArea{padding:20px 10px;background:#F8F8F8;border:1px solid #EBF5F0;}
+.checkbox{padding-bottom:5px;}
+.checkbox li{margin:5px 0;position:relative;}
+.checkbox li input{vertical-align:middle;}
+.checkbox li span{display:inline-block;padding:0 3px;position:relative;}
+.checkbox li span .inputArea{position:absolute;left:0;top:0;padding:5px;z-index:100;background:#FDFFEB;border:2px solid #c4c4c4;width:275px;height:100px;resize:none;}
+.checkbox li span .input{width:260px;}
+.checkbox li span .input1{width:100px;}
+.checkbox li span label,.checkbox li span input{}
+.checkbox li span select{margin-right:3px;width:80px;}
+.hide{display:none;}
+.hidden{visibility: hidden;}
+.show{display:block;}
+.bold{font-weight:bold;}
+.pusht{margin-top:10px;}
+.action{display:-moz-inline-stack;display:inline-block;zoom: 1;*display: inline;vertical-align:middle;}
+.btnArea{margin-top:10px;padding:10px 15px;overflow:hidden;}
+.abtn,.btnArea .abtn{padding:5px 8px;background:#00A8E6;color:#fff;}
+.abtn:hover,.btnArea .abtn:hover{background:#35b3ee;}
+.description{margin-top:10px;}
+.description{padding:10px;color:#999;width:650px;height:120px;border:1px solid #c4c4c4;}
+.pageTit{padding-bottom:8px;border-bottom:1px solid #E4E4E4}
+.pageTit h4{font-size:20px;font-weight:normal;}
+.pageTit h4 span{color:red;font-size:20px;}
+.pageTit h4 a{margin-left:10px;}
+.tablelist{clear:left;margin-top:10px;background:#fff;width:100%;border:1px solid #ccc;line-height:1.8;vertical-align: middle;}
+.tablelist th{padding:5px;background:#f2f0f0;text-align:center;vertical-align: middle;border:1px solid #ccc;border-width:0 0 0 1px;font-weight:bold;}
+.tablelist td{padding:3px 5px;background:#fff;vertical-align: middle;border:1px solid #ccc;border-width: 1px 0 0 1px;text-align:center;line-height:2;}
+.tablelist tr th:first-child,.tablelist tr td:first-child,.tablelist tr th.first,.tablelist tr td.first {border-left-width:0;}
+.tablelist tr.even td,.tablelist tr.odd td{ background-color:transparent; background-image:none;}
+.tablelist tr.hover td{background:#f0f5f8;}
+.tablelist td.do a{display:inline-block;padding:0 3px;background:#00A8E6;color:#fff;border-radius:3px;}
+.tablelist td.showMore{position:relative;}
+.tablelist td .infoBox{display:none;position:absolute;z-index:101;top:-5px;left:0;width:200px;padding:5px;background:#FDFFEB;min-height: 10px;height: auto!important;height: 10px;overflow: visible;border:2px solid #c4c4c4;}
+.filter .abtn{padding:2px 8px;}

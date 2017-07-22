@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SSI"
+  id="myeclipse.1341294853094"
+  context-root="/SSI"
+  j2ee-spec="5.0"
+  archive="SSI.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Poi">
+
+	<typeAlias alias="PoiType" type="com.entity.GaudShopType" />
+	<typeAlias alias="ChenggeType" type="com.entity.ChenggeShopType" />
+	<typeAlias alias="ruleBean" type="com.entity.RuleBean" />
+	<typeAlias alias="taskBean" type="com.entity.TaskBean" />
+	
+	<select id="getGuadType" resultClass="PoiType" parameterClass="java.lang.Integer">
+		<![CDATA[ 
+        select id,name,pid
+        from cg_poi_type
+        where level =  #level# and mark = 1
+        ]]>
+	</select>
+	
+	<select id="getGuadChildTypeByType" resultClass="PoiType" parameterClass="java.lang.Integer">
+		<![CDATA[ 
+        select id,name,pid
+        from cg_poi_type
+        where pid =  #pid# and mark = 1
+        ]]>
+	</select>
+	
+	<select id="getChenggeLevelOneTypes" resultClass="ChenggeType" >
+		<![CDATA[ select id,name from cg_shop_type_relation where mark = 1]]>
+	</select>
+	
+	<select id="getChenggeLevelTwoChildTypeByType" resultClass="ChenggeType" parameterClass="java.lang.Integer">
+		<![CDATA[ 
+              select s.id,s.name from cg_shop_type s ,cg_shop_type_relation r
+			 where r.id = #id# 
+			 and 
+			    (
+			         locate(concat(',',s.id,','),r.child_ids) > 0
+					   or 
+					   locate(concat('A',s.id,','),concat('A',r.child_ids)) > 0
+					   or
+					   locate(concat(',',s.id,'A'),concat(r.child_ids,'A')) > 0		   			
+			     )
+			 and s.mark = 1
+         ]]>
+	</select>
+	
+	<select id="getChenggeLevelThreeChildTypeByType" resultClass="ChenggeType" parameterClass="java.lang.Integer">
+		<![CDATA[ 
+              select id,name from cg_brand_style  where type = #pid# and mark = 1
+         ]]>
+	</select>
+	
+	<select id="queryRuleListPage" resultClass="ruleBean"  parameterClass="java.util.Map">
+		<![CDATA[ 
+              select id,gdtype1,gdtype2,gdtype3,
+              keyword,cgtype1,cgtype2,cgtype3,
+              status,ruletype,
+              cgtype1name,cgtype2name,cgtype3name,
+              gdtype1name,gdtype2name,gdtype3name,
+              add_time,add_user,mark 
+              from cg_import_rules  
+              where  mark = 1
+              order by id
+              limit #offset#,#numForOnePage#
+         ]]>
+	</select>
+	
+	<select id="testAjax" resultClass="java.lang.String" >
+		<![CDATA[ 
+              select 'jquery->ajax->struts2->action->spring->MVC->ibatis->MVC->action->jsp->html success.' from dual
+         ]]>
+	</select>
+	
+	<select id="queryTaskListPage" resultClass="taskBean"  parameterClass="java.util.Map">
+		<![CDATA[ 
+              select  id,ruletype,taskstatus,keyword,memo,inname,outname,intype,outtype 
+              from cg_import_task  
+              where  mark = 1
+              order by id
+              limit #offset#,#numForOnePage#
+         ]]>
+	</select>
+
+</sqlMap>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+<!-- spring监听在web中启动 -->
+<context-param>  
+   <param-name>contextConfigLocation</param-name>  
+   <param-value>
+   /WEB-INF/Context-db.xml,
+   /WEB-INF/Context-action.xml,
+   /WEB-INF/Context-service.xml,
+   /WEB-INF/Context-dao.xml
+   </param-value>  
+</context-param>  
+<listener>  
+   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+</listener>  
+
+<servlet>  
+      <servlet-name>dwr-invoker</servlet-name>  
+      <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>  
+      <init-param>  
+          <param-name>debug</param-name>  
+          <param-value>true</param-value>  
+      </init-param>  
+  </servlet>  
+    
+  <servlet-mapping>  
+      <servlet-name>dwr-invoker</servlet-name>  
+      <url-pattern>/dwr/*</url-pattern>  
+  </servlet-mapping> 
+
+<servlet>
+    <servlet-name>FileDownServlet</servlet-name>
+    <servlet-class>com.tools.FileDownServlet</servlet-class>
+  </servlet>
+
+ <servlet-mapping>
+   <servlet-name>FileDownServlet</servlet-name>
+   <url-pattern>/FileDownServlet</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>com.tools.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+ <filter>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+</filter-mapping>
+
+
+	<filter>  
+		<filter-name>characterEncoding</filter-name>  
+		<filter-class>com.web.CharacterEncodingFilter</filter-class>  
+	</filter>  
+	<filter-mapping>  
+		<filter-name>characterEncoding</filter-name>  
+		<url-pattern>/*</url-pattern>  
+	</filter-mapping>
+
+<!-- 配置struts2过滤器 -->
+    <filter>
+	<filter-name>struts2</filter-name>
+	<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>
+	<filter-name>struts2</filter-name>
+	<url-pattern>*.action</url-pattern>
+	<dispatcher>REQUEST</dispatcher><!--code.1-->  
+    <dispatcher>FORWARD</dispatcher><!--code.2-->
+	</filter-mapping>
+	
+	<filter-mapping>
+	<filter-name>struts2</filter-name>
+	<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

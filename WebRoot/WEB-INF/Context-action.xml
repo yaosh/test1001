@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<bean id="Loginaction" class="com.actions.LoginAction">
+<property name="login">
+<ref bean="LoginService"></ref>
+</property>
+<property name="humanservice" ref="Humanservice"></property>
+<property name="brandservice" ref="BrandService"></property>
+</bean>  
+
+
+<bean id="Useraction" class="com.actions.UserAction">
+<property name="humanservice" ref="Humanservice"></property>
+</bean>  
+
+<bean id="ImageTextAction" class="com.actions.ImageTextAction">
+<property name="humanservice" ref="Humanservice"></property>
+</bean> 
+
+<bean id="PoiAction" class="com.actions.PoiAction">
+<property name="poiservice" ref="PoiService"></property>
+</bean> 
+
+
+<bean id="BrandAction" class="com.actions.BrandAction">
+<property name="brandservice" ref="BrandService"></property>
+</bean> 
+
+
+</beans>

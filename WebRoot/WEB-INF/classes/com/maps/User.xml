@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap 
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Student">
+
+	<typeAlias alias="Student" type="com.entity.Student" />
+	<select id="getStu" parameterClass="java.lang.String"
+		resultClass="Student">
+		<![CDATA[ 
+    select 
+     * 
+    from User
+    where id = #id# 
+    ]]>
+	</select>
+	
+	<select id="getAllStu" resultClass="Student">
+		<![CDATA[ 
+    select 
+      * 
+    from User  
+    ]]>
+	</select>
+
+	<update id="updateStu" parameterClass="Student">
+		<![CDATA[ 
+    UPDATE User
+    SET  
+      name=#name#, 
+      score=#score#,
+      bak=#bak#
+  WHERE id = #id# 
+]]>
+	</update>
+
+	<insert id="insertStu" parameterClass="Student">
+		INSERT INTO User (id, name, score,bak) VALUES (#id#,#name#, #score#,#bak#)
+	</insert>
+
+	<delete id="deleteStu" parameterClass="java.lang.String">
+		delete from User where id=#id#
+	</delete>
+
+</sqlMap>

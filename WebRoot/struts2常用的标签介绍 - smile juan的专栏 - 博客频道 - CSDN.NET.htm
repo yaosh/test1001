@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>  
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>struts2常用的标签介绍 - smile juan的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="一：Struts2框架的标签库可以分为以下三类：&#160;&#160;&#160; 1.用户界面标签(UI标签)：主要用来生成HTML元素的标签。(1)表单标签：主要用于生成HTML页面的FORM元素，以及普通表单元素的标签。(2)非表单标签：主要用于生成页面上的tree，Tab页等。&#160;&#160; 2.非用户界面标签(非UI标签)：主要用于数据访问，逻辑控制。(1)数据访问标签：主要包含用于输出值栈(ValueS" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/light_blue/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/u010722889/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+<body>
+
+
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/smilejuan">smile juan的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/smilejuan?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/smilejuan?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/smilejuan/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "u010722889";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/smilejuan";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/58598037">
+<font color=red> CSDN日报20170228——《技术晋升的评定与博弈》
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp
+
+<a href="http://blog.csdn.net/turingbooks/article/details/58072986">
+<font color=blue>程序员2月书讯
+</font></a>
+
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://bbs.csdn.net/topics/392092888
+">
+<font color=red>社区有奖问答--一起舞动酷炫的iOS动画
+</font></a>
+
+
+</div>                        </div>
+                        
+
+
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+      
+      var fasrc="http://my.csdn.net/my/favorite/miniadd?t=struts2%e5%b8%b8%e7%94%a8%e7%9a%84%e6%a0%87%e7%ad%be%e4%bb%8b%e7%bb%8d&u=http://blog.csdn.net/smilejuan/article/details/20790737"
+
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/smilejuan/article/details/20790737">
+        struts2常用的标签介绍            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/java' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">java</a><a href='http://www.csdn.net/tag/web%e5%bc%80%e5%8f%91' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">web开发</a><a href='http://www.csdn.net/tag/struts2' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">struts2</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2014-03-12 21:06</span>
+            <span class="link_view" title="阅读次数">1261人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('struts2%e5%b8%b8%e7%94%a8%e7%9a%84%e6%a0%87%e7%ad%be%e4%bb%8b%e7%bb%8d','20790737');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(20790737,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1711861','u010722889','top','20790737');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">javaweb开发<em>（14）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/u010722889/article/category/1711861"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1711861">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p><strong><span style="font-size:18px">一：<span style="font-family:Calibri">Struts2</span>框架的标签库可以分为以下三类：</span></strong></p>
+<p><strong><span style="font-family:Calibri; font-size:14px">&nbsp;&nbsp;&nbsp; 1.</span>用户界面标签<span style="font-family:Calibri">(UI</span>标签<span style="font-family:Calibri">)</span>：主要用来生成<span style="font-family:Calibri">HTML</span>元素的标签。</strong></p>
+<p><span style="font-family:Calibri; font-size:14px">(1)</span>表单标签：主要用于生成<span style="font-family:Calibri">HTML</span>页面的<span style="font-family:Calibri">FORM</span>元素，以及普通表单元素的标签。</p>
+<p><span style="font-family:Calibri; font-size:14px">(2)</span>非表单标签：主要用于生成页面上的<span style="font-family:Calibri">tree</span>，<span style="font-family:Calibri">Tab</span>页等。</p>
+<p><strong><span style="font-family:Calibri; font-size:14px">&nbsp;&nbsp; 2.</span>非用户界面标签<span style="font-family:Calibri">(</span>非<span style="font-family:Calibri">UI</span>标签<span style="font-family:Calibri">)</span>：主要用于数据访问，逻辑控制。</strong></p>
+<p><span style="font-family:Calibri; font-size:14px">(1)</span>数据访问标签：主要包含用于输出&#20540;栈<span style="font-family:Calibri">(ValueStack)</span>中的&#20540;，完成国际化等功能的标签。</p>
+<p><span style="font-family:Calibri; font-size:14px">(2)</span>流程控制标签：主要包含用于实现分支，循环等流程控制的标签。</p>
+<p><strong><span style="font-family:Calibri; font-size:14px">&nbsp;&nbsp; 3.AJAX</span>标签<span style="font-family:Calibri">:</span>用于支持<span style="font-family:Calibri">Ajax</span>效果</strong></p>
+<p><span style="font-family:Calibri; font-size:14px">&nbsp;<strong><span style="font-size:18px">&nbsp;&nbsp;</span></strong></span><strong><span style="font-size:18px">二：<span style="font-family:Calibri">Struts2</span>标签的使用</span></strong></p>
+<p><span style="font-family:Calibri; font-size:14px">1</span>．在<span style="font-family:Calibri">struts2-core-2.3.16.jar</span>压缩文件的<span style="font-family:Calibri">META-INF</span>目录下找到<span style="font-family:Calibri">Struts-tags.tld</span>文件，这个文件里定义了<span style="font-family:Calibri">Struts2</span>的标签。如图：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="http://img.blog.csdn.net/20140308175803875?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="341" align="left" height="300"></p>
+<p>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px">&nbsp; </span></p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px"></span>&nbsp;</p>
+<p><span style="font-family:Calibri; font-size:14px">2.</span><span style="font-size:14px">要在<span style="font-family:Calibri">jsp</span>中使用<span style="font-family:Calibri">Struts2</span>的标签，先要指明标签的引入。通过<span style="font-family:Calibri">jsp</span>的代码的顶部加入以下的代码：</span></p>
+<p><span style="font-family:Calibri; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&nbsp; <a target="_blank" href="mailto:%@taglib prefix='s' uri='/Struts-tags' %" target="_blank">
+%@taglib prefix=&quot;s&quot; uri=&quot;/Struts-tags&quot; %</a>&gt;</span></p>
+<p><img alt="" src="http://img.blog.csdn.net/20140308191205328?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="702" align="left" height="270"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;<strong><span style="font-size:14px">&nbsp;&nbsp;&nbsp; 具体使用案例观看我写的“在线考试系统”博客</span></strong></p>
+<p><span style="font-size:14px">三：<span style="font-family:Calibri">Struts2</span>标签语法</span></p>
+<p><span style="font-family:Calibri; font-size:14px">Struts2</span>标签的属性按照下列的三个规则进行计算。</p>
+<p><span style="font-family:Calibri; font-size:14px">(1)</span>所有的字符串属性类型都会解析“<span style="font-family:Calibri">%{</span>…<span style="font-family:Calibri">}</span>”这样的语法。</p>
+<p><span style="font-family:Calibri; font-size:14px">(2)</span>所有的非字符属性类型都不会被解析，而是直接被看作一个<span style="font-family:Calibri">OGNL</span>表达式进行求&#20540;</p>
+<p><span style="font-family:Calibri; font-size:14px">(3)</span>对于第二个规则的例外情况是，如果非字符串属性使用了“<span style="font-family:Calibri">%{</span>…<span style="font-family:Calibri">}</span>”语法，那么<span style="font-family:Calibri">%{</span>…<span style="font-family:Calibri">}</span>将被忽略，花括号中的内容将作为表达式计算。</p>
+<p><span style="font-size:14px">四：<span style="font-family:Calibri">Struts2</span>通用标签</span></p>
+<p><span style="font-family:Calibri; font-size:14px">Struts2</span>中通用标签可以分为二类：控制标签和数据标签。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我在此先写一个User类</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_1_2980642"  class="java" name="code" snippet_file_name="blog_20140312_1_2980642" code_snippet_id="232263">package model;
+
+public class User {
+
+	private String name;
+	private int age;
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+}
+</pre>
+<p><strong><span style="font-size:18px">创建MessageAction类</span></strong></p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_2_8061625"  class="java" name="code" snippet_file_name="blog_20140312_2_8061625" code_snippet_id="232263">package action;
+
+import model.User;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MessageAction extends ActionSupport {
+	private String message;
+	private User user;
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		user = new User();
+		user.setName(&quot;csdn&quot;);
+		user.setAge(22);
+		message = &quot;Hello!&quot;;
+		return SUCCESS;
+	}
+
+	public String login() {
+		boolean b = true;
+		if (user.getName() == null || user.getName().trim().equals(&quot;&quot;)) {
+			addFieldError(&quot;name&quot;, &quot;用户名不得为空&quot;);
+			b = false;
+		}
+		if (user.getAge() &lt;= 0) {
+			addFieldError(&quot;age&quot;, &quot;年龄不合法&quot;);
+			b = false;
+		}
+		if (b) {
+			return SUCCESS;
+		}
+		return INPUT;
+	}
+}
+</pre>
+<p><br>
+<strong><span style="font-size:18px">配置struts.xml文件</span></strong><br>
+</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_3_5269962"  class="java" name="code" snippet_file_name="blog_20140312_3_5269962" code_snippet_id="232263">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE struts PUBLIC &quot;-//Apache Software Foundation//DTD Struts Configuration 2.1//EN&quot; &quot;http://struts.apache.org/dtds/struts-2.1.dtd&quot;&gt;
+&lt;struts&gt;
+
+&lt;package name=&quot;User&quot; namespace=&quot;/user&quot; extends=&quot;struts-default&quot;&gt;
+    &lt;action name=&quot;message&quot; class=&quot;action.MessageAction&quot; &gt;
+       &lt;result name=&quot;success&quot;&gt;
+       /index.jsp
+       &lt;/result&gt;
+    &lt;/action&gt;
+    
+    &lt;action name=&quot;login&quot; class=&quot;action.MessageAction&quot; method=&quot;login&quot; &gt;
+       &lt;result name=&quot;success&quot;&gt;
+       /index.jsp
+       &lt;/result&gt;
+       &lt;result name=&quot;input&quot;&gt;
+       /lodin.jsp
+       &lt;/result&gt;
+    &lt;/action&gt;
+&lt;/package&gt;
+&lt;/struts&gt;    
+</pre>
+<p><br>
+配置web文件</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_4_8018197"  class="java" name="code" snippet_file_name="blog_20140312_4_8018197" code_snippet_id="232263">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot; id=&quot;WebApp_ID&quot; version=&quot;3.0&quot;&gt;
+  &lt;display-name&gt;message&lt;/display-name&gt;
+ &lt;filter&gt;
+		&lt;filter-name&gt;struts2&lt;/filter-name&gt;
+		&lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;
+	&lt;/filter&gt;
+	&lt;filter-mapping&gt;
+		&lt;filter-name&gt;struts2&lt;/filter-name&gt;
+		&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+	&lt;/filter-mapping&gt;
+&lt;/web-app&gt;</pre>
+<p><br>
+创建页面index.jsp</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_5_8542018"  class="java" name="code" snippet_file_name="blog_20140312_5_8542018" code_snippet_id="232263">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%@ taglib uri=&quot;/struts-tags&quot; prefix=&quot;s&quot;%&gt;
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>&nbsp;</p>
+<p><strong><span style="font-size:18px">数据标签</span></strong></p>
+<p><strong><span style="font-size:18px">1.property标签：<br>
+标签用于输出&#20540;栈中的对象的属性(property)&#20540;，使用value属性来指定要输出的对象属性，如果没有指定value属性，那么默认输出栈顶对象<br>
+&nbsp;&nbsp;&nbsp; <span style="color:#ff0000">property标签属性</span></span></strong></p>
+<p><strong><span style="font-size:18px"><img alt="" src="http://img.blog.csdn.net/20140312211757125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"></span></strong></p>
+<strong><span style="font-size:18px"></span></strong><pre code_snippet_id="232263" snippet_file_name="blog_20140312_6_6306763"  class="java" name="code" snippet_file_name="blog_20140312_6_6306763" code_snippet_id="232263">1&lt;s:property value=&quot;message&quot; /&gt;
+	&lt;br /&gt;
+	2&lt;s:property value=&quot;'message'&quot; /&gt;
+	&lt;br /&gt;
+	3&lt;s:property value=&quot;%{message}&quot; /&gt;
+	&lt;br /&gt;   
+         4&lt;s:property value=&quot;%{csdn}&quot; default=&quot;csdn&quot;/&gt;
+         &lt;br /&gt;</pre>
+<p>输出结果：</p>
+<p><img alt="" src="http://img.blog.csdn.net/20140312211918468?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="100"></p>
+<p><span style="color:#ff0000">输出结果看<br>
+第一种和第三种方法取出MessageAction.java类中的赋给message的hello&#20540;（即栈&#20540;），<br>
+第三种方法取的是message的name&#20540;，<br>
+但是如果第四种方法不给出缺省的&#20540;。不会输出任何的&#20540;<br>
+</span><span style="color:#ff0000">set标签的使用</span><br>
+Set标签将一个&#20540;赋给指定范围内变量。Set标签在某些情况下是比较有用的，例如在页面中多次引用一个复杂的表达式，我们可以将这个表达式赋给一个变量，然后直接引用变量。带来的好处就是：<br>
+1.提升了性能(表达式的计算只有一次)<br>
+2.提高了代码的可读性。</p>
+<p><img alt="" src="http://img.blog.csdn.net/20140312212031156?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"></p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_7_8847255"  class="java" name="code" snippet_file_name="blog_20140312_7_8847255" code_snippet_id="232263">&lt;s:set name=&quot;xxx&quot; value=&quot;user.name&quot; /&gt;
+	1&lt;s:property value=&quot;#session.xxx&quot; /&gt;&lt;br/&gt;
+	2&lt;s:property value=&quot;#request.xxx&quot; /&gt;&lt;br/&gt;
+	3&lt;s:property value=&quot;xxx&quot; /&gt;&lt;br/&gt;
+	4&lt;s:property value=&quot;#xxx&quot; /&gt;
+&lt;/s:set&gt;</pre>
+<p>输出结果：</p>
+<p><img alt="" src="http://img.blog.csdn.net/20140312212216828?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="100"></p>
+<p>bean标签和param标签<br>
+¨bean标签用于实例化一个JavaBean对象(必须遵照JavaBean规范)，bean标签的标签体内可以包含多个param标签，用于设置Bean的属性(必须有相应的setter方法)。如果指定了id属性(Struts2.2.1.1已经不建议使用，使用var属性替代)，则创建的Bean实例将被放入到OgnlContext中。<br>
+注意：<br>
+id属性是可选的，无论是否指定id属性，bean标签创建的JavaBean实例都会被压入到&#20540;栈的顶部，在bean标签内部可以直接访问创建的对象，无须使用”#”标记，当bean标签结束的时候，bean标签创建的实例将从&#20540;栈中删除。<br>
+如果指定了id属性，那么bean标签创建的JavaBean实例还将被放到OgnlContext中，这样在bean标签的外部，也可以访问创建的对象了，不过此时就要使用”#”标记了。<br>
+&nbsp;<img alt="" src="http://img.blog.csdn.net/20140312212321453?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"><br>
+&nbsp;param标签被用作其他标签的子标签，用于为其他标签提供参数<br>
+<img alt="" src="http://img.blog.csdn.net/20140312212340515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"></p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_8_8007440"  class="java" name="code" snippet_file_name="blog_20140312_8_8007440" code_snippet_id="232263">&lt;s:bean name=&quot;model.User&quot;&gt;
+	     &lt;s:param name=&quot;name&quot; value=&quot;'csdn'&quot;/&gt;
+	     &lt;s:param name=&quot;age&quot; value=&quot;'22'&quot;/&gt;
+	     &lt;s:property value=&quot;name&quot;/&gt;
+	     &lt;s:property value=&quot;age&quot;/&gt;&lt;/s:bean&gt;</pre>
+<p>输出结果：</p>
+<p><img alt="" src="http://img.blog.csdn.net/20140312212455250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="100"></p>
+<p>include标签<br>
+&nbsp;&nbsp;&nbsp; include标签类&#20284;于JSP的&lt;jsp:include&gt;标签，用于包含一个Servlet或JSP页面。include标签的标签体内可以包含多个param标签，用于向被包含的页面传递请求参数</p>
+<p>&nbsp;&nbsp; <img alt="" src="http://img.blog.csdn.net/20140312212600984?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"></p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_9_9501156"  class="java" name="code" snippet_file_name="blog_20140312_9_9501156" code_snippet_id="232263"> &lt;s:include value=&quot;include.jsp&quot;&gt;
+	          &lt;s:param name=&quot;name&quot; value=&quot;csdn&quot;/&gt;
+	          &lt;s:param name=&quot;age&quot; value=&quot;22&quot;/&gt;
+ &lt;/s:include&gt; </pre>
+<p><br>
+&nbsp;控制标签<br>
+&nbsp; 用于在呈现结果页面时控制程序的执行流程，根据程序执行的状态输出不同的结果<br>
+&nbsp;<br>
+控制标签包括下列标签：<br>
+1.if:用于控制选择输出。<br>
+2.elseif:同if标签结合使用，用来控制选择输出。<br>
+3.else:同if标签结合使用，用来控制选择输出。<br>
+4.append:用来将多个集合拼接为一个新的集合。<br>
+5.generator:为一个字符串解析器，用来将一个字符串解析为一个集合。<br>
+6.iterator:迭代器，用来迭代输出集合数据。<br>
+7.merge:用来将多个集合拼接为一个新的集合,同append有所区别。<br>
+8.sort:用来对集合排序。<br>
+9.subset：用来截取集合的部分集合，开成新的集合子集合。<br>
+if/elseif标签属性test:为必填属性，是一个Boolean类型&#20540;，决定是否显示if标签内容。该标签标准&#26684;式如下：<br>
+&lt;s:if test=“表达式”&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ……..<br>
+&lt;/s:if&gt;<br>
+&lt;s:elseif test=“表达式”&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ……..<br>
+&lt;/s:elseif&gt;<br>
+&lt;s:else&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ………..<br>
+&lt;/s:else&gt;<br>
+&nbsp;案例：</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_10_5629698"  class="java" name="code" snippet_file_name="blog_20140312_10_5629698" code_snippet_id="232263">&lt;s:set name=&quot;age&quot; value=&quot;'61'&quot;/&gt;    
+  &lt;s:if test=&quot;#age&gt;60&quot;&gt;      老人      &lt;/s:if&gt;      
+&lt;s:elseif test=&quot;#age&gt;40&quot;&gt;       中年人      &lt;/s:elseif&gt;     
+ &lt;s:elseif test=&quot;#age&gt;20&quot;&gt;      青年人      &lt;/s:elseif&gt;     
+ &lt;s:else&gt;      少年      &lt;/s:else&gt;  </pre>
+<p><br>
+iterator（迭代标签）<br>
+用于遍历集合（java.util.Collection）List,Map,数组或枚举&#20540;(java.util.iterator)</p>
+<p><img alt="" src="http://img.blog.csdn.net/20140312212800390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc21pbGVqdWFu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="630" height="178"><br>
+<br>
+案例：</p>
+<pre code_snippet_id="232263" snippet_file_name="blog_20140312_11_5031801"  class="java" name="code">&lt;s:iterator value=&quot;{'java','jsp','hibernate','struts2','html'}&quot; id=&quot;skill&quot; status=&quot;status&quot;&gt;
+        &lt;s:property value=&quot;#status.odd&quot;/&gt;&lt;br/&gt;
+        &lt;s:if test=&quot;#status.odd&quot;&gt;
+          &lt;s:property value=&quot;skill&quot;/&gt;&lt;br/&gt;
+        &lt;/s:if&gt;
+        &lt;!--下标  --&gt;
+        &lt;s:property value=&quot;#status.index&quot;/&gt;
+       &lt;!-- 页面显示序号 --&gt;
+        &lt;s:property value=&quot;#status.count&quot;/&gt;
+      &lt;/s:iterator&gt;</pre>
+<p><br>
+<br>
+<br>
+&nbsp;</p>
+<p><br>
+&nbsp;</p>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+
+        <div id="digg" ArticleId="20790737" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>0</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/smilejuan/article/details/13502109';">上一篇</span><a href="/smilejuan/article/details/13502109" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">有关http协议中的请求头和响应头    各个单词的含义</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/smilejuan/article/details/21118303';">下一篇</span><a href="/smilejuan/article/details/21118303" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Struts2应用程序，允许用户在在线调查表中注册</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1711861','u010722889','foot','20790737');">javaweb开发<em>（14）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1711861', 'u010722889','foot','20790737');
+        });
+    </script>
+      
+</div>
+
+     <div>
+             <ins data-revive-zoneid="206" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+    </div>
+
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/u010722889/svc/GetSuggestContent/20790737",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "20790737",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'struts2常用的标签介绍' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+
+    <div id="ad_cen">        
+                      <ins data-revive-zoneid="199" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    </div>  
+
+    <!-- 广告位开始 -->
+    <ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '20790737';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/u010722889/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/u010722889" target="_blank">
+    <img src="http://avatar.csdn.net/6/6/0/1_u010722889.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/u010722889" class="user_name" target="_blank">u010722889</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=u010722889','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>11566次</span></li>
+    <li>积分：<span>335</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog2.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：335 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>22篇</span></li>
+    <li>转载：<span>2篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>0条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/u010722889/article/category/1612843" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="/u010722889/article/category/1711861" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">javaweb开发</a><span>(15)</span>
+                </li>
+                 <li>
+                    <a href="/u010722889/article/category/2270109" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">android</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/u010722889/article/category/2270111" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">eclipse</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/u010722889/article/category/6144323" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">php安装</a><span>(1)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/u010722889/article/month/2016/08">2016年08月</a><span>(5)</span></li><li><a href="/u010722889/article/month/2016/03">2016年03月</a><span>(1)</span></li><li><a href="/u010722889/article/month/2015/01">2015年01月</a><span>(1)</span></li><li><a href="/u010722889/article/month/2014/08">2014年08月</a><span>(1)</span></li><li><a href="/u010722889/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="/u010722889/article/month/2014/05">2014年05月</a><span>(1)</span></li><li><a href="/u010722889/article/month/2014/03">2014年03月</a><span>(4)</span></li><li><a href="/u010722889/article/month/2013/10">2013年10月</a><span>(6)</span></li><li><a href="/u010722889/article/month/2013/09">2013年09月</a><span>(5)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/smilejuan/article/details/21179705" title="编写简单的在线考试系统">编写简单的在线考试系统</a><span>(1270)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/20790737" title="struts2常用的标签介绍">struts2常用的标签介绍</a><span>(1246)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11050361" title="按位取反">按位取反</a><span>(974)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/21176431" title="Hibernate框架入门一">Hibernate框架入门一</a><span>(817)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/21118303" title="Struts2应用程序，允许用户在在线调查表中注册">Struts2应用程序，允许用户在在线调查表中注册</a><span>(540)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11216903" title="用java写出一个数的倒数">用java写出一个数的倒数</a><span>(492)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/32132389" title="location.href=&quot;#&quot;与document.url =&quot;#&quot;的区别">location.href=&quot;#&quot;与document.url =&quot;#&quot;的区别</a><span>(479)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/13297715" title="http1.0与http1.1">http1.0与http1.1</a><span>(454)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/12451643" title="java的输出流与输入流的讲解">java的输出流与输入流的讲解</a><span>(453)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/13621023" title="如何在myseclipse中修改Servlet模板">如何在myseclipse中修改Servlet模板</a><span>(443)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/smilejuan/article/details/52251743" title="enter（回车）键事件">enter（回车）键事件</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/13502109" title="有关http协议中的请求头和响应头    各个单词的含义">有关http协议中的请求头和响应头    各个单词的含义</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/13347229" title="http的请求的有关内容">http的请求的有关内容</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/13297715" title="http1.0与http1.1">http1.0与http1.1</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/12914527" title="xml">xml</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/12451643" title="java的输出流与输入流的讲解">java的输出流与输入流的讲解</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11778951" title="猜数字游戏的实现">猜数字游戏的实现</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11216903" title="用java写出一个数的倒数">用java写出一个数的倒数</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11215749" title="实现验证码功能">实现验证码功能</a><span>(0)</span>
+</li>
+<li>
+<a href="/smilejuan/article/details/11050361" title="按位取反">按位取反</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/blogdevteam/article/details/56845391" target="_blank">* CSDN日报20170224——《程序员该用哪种姿势来理财》</a></li>
+<li><a href="http://blog.csdn.net/jiangwei0910410003/article/details/54645085" 
+target="_blank">* Android"挂逼"修炼之行---解析公众号文章消息和链接文章消息如何自动打开原理</a></li>
+<li><a href="http://blog.csdn.net/mindfloating/article/details/57616620"target="_blank">* 技术晋升的评定与博弈</a></li>
+<li><a href="http://blog.csdn.net/baron_leizhang/article/details/58071773" target="_blank">* 安居客Android项目架构演进</a></li>
+<li><a href="http://blog.csdn.net/ityouknow/article/details/58034815" 
+target="_blank">* 一次生产事故的优化经历</a></li>
+
+
+</ul></ul>
+</div>
+
+
+    </div>
+    <div class="clear">
+    </div>
+
+
+                   <!-- 广告位开始 --> 
+                    <ins data-revive-zoneid="190" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+                    <!-- 广告位结束 -->
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1672481"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_code.css" />
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/saveToCode.js"></script>
+      <script type="text/javascript" src="//csdnimg.cn/rabbit/tracking-ad/main.js?75eacd8"></script>
+
+     <link rel="stylesheet" href="http://static.blog.csdn.net/css/fa.css" />
+
+    <div class="pop_CA_cover"  style="display:none"></div>
+    <div class="pop pop_CA"  style="display:none">
+          <div class="CA_header">
+            收藏助手
+            <span class="cancel_icon"  id="fapancle"  onclick="$('.pop_CA').hide();$('.pop_CA_cover').hide();"></span>
+          </div>
+          <iframe src="" id="fa" frameborder="0" width="100%" height="360"  scrolling="no" />
+    </div>
+</body>
+</html>   
+ 

@@ -1,0 +1,28 @@
+div.num-cell{
+	width:45px;
+	text-align:center;
+}
+div.num-area{
+text-align:center;
+}
+th{
+	color:#444;
+}
+table th,table td{
+border-left: 1px solid #e8e8e8;
+border-width: 0 0 1px 1px;
+font-size: inherit;
+margin: 0;
+overflow: visible;
+padding-top:5px;
+padding-bottom:5px;
+}
+table th{
+color:#666;
+}
+
+div.title{
+	font:14px/1.5 Microsoft YaHei, tahoma, arial, \5b8b\4f53, sans-serif;
+	line-height:30px;
+	margin-top:10px;
+}
